@@ -1,0 +1,26 @@
+arXiv:2106.03118「Aspects of Pseudo Entropy in Field Theories」を読む。
+
+概要
+QFTとspin systemにおけるpseudoentropyの性質を調べた。
+・量子相にあるときnonpositivityが破れる。
+・始状態と終状態が異なるトポロジカル相にあるとき、we expect a gapless mode localized along an interface, which enhances the pseudoentropy, leading to the violation of the nonpositivity of the difference. 
+
+nonpositivity（強劣加法性）
+    https://qiita.com/SamN/items/a0582e3aa9a888afe686、http://www.quest.lab.uec.ac.jp/ogawa/qmath2020/qmath20200722.pdf
+
+gapless
+    バンドギャップがないこと？（https://www.jstage.jst.go.jp/article/butsuri/75/5/75_289/_article/-char/ja/）
+    interfaceとは？
+
+IV. PSEUDOENTROPY AS A PROBE FOR QUANTUM PHASE TRANSITIONSを読む
+probeとは？
+    理論物理における「プローブ」（probe）とは、物理的な系や現象を調べるために用いる「観測手段」や「試験的なツール」のことを指します。（chatGPT）
+
+1の(3.17)と2の(4.1)を比較する。
+    ・α、β、γが定数のとき、１の（２．８）の計量テンソルは対角化できるか？できるなら、定数のときは必ずミンコフスキー時空となる。
+
+疑問点
+・メトリックの形が違っても、表す時空が同じなら、対応するスピン系での計算結果も同じになる？
+    全て定数として（３．１８）を対角化する(code 1)
+    ζにはよらない(image 1)
+    
