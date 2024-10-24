@@ -1,1 +1,6 @@
 λ^2+γ2=1で基底状態が縮退するとは？
+    計算結果がなぜ縮退しているように見えないか？計算ミス？　＞　確認した限りだとミスはない気がするが？
+
+Scaling of entanglement close to a quantum phase transitionを読んだ。（まとめはnotion）
+
+相図をかいたけど、あってるかわからん。critical XXは実現不可か？そもそも相図から何がわかるのか？
