@@ -11,7 +11,7 @@ gamma = 1
 zeta = 0
 k = np.linspace(-np.pi/epsilon,np.pi/epsilon,100) #波数。分散関係を見るので、これは変えない。
 m = np.linspace(0.1,3,100) #####奥行きのパラメータ
-alpha_list = np.linspace(0.1,2,100) #####アニメーションで変化させる変数
+alpha_list = np.linspace(1,50,100) #####アニメーションで変化させる変数
 
 fig = plt.figure(figsize=(10,10)) #figureインスタンスの作成
 ax = fig.add_subplot(projection='3d') #3つ目の軸を追加
