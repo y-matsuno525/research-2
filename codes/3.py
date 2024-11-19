@@ -53,6 +53,6 @@ def draw_frame(m): #引数はアニメーションで変化させる変数
 #ax.set_title("ε=1, α=1, γ1=10^-1")
 #plt.grid()
 ani = FuncAnimation(fig, draw_frame, frames=m_list, interval=100) #3つめにアニメーションで変化させる変数のリストを設定
-ani.save("3.mp4", writer="ffmpeg")
+#ani.save("3.mp4", writer="ffmpeg")
 #ax.legend()
 plt.show()

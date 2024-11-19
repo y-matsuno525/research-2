@@ -4,20 +4,20 @@ import numpy as np
 
 epsilon = 1
 p = epsilon
-#alpha = 1
+alpha = 1
 beta = 0
-gamma = 1
-#m = 0.5
+#gamma = 1
+#m = 1
 zeta = 0
 k = np.linspace(-np.pi/epsilon,np.pi/epsilon,100) #波数。分散関係を見るので、これは変えない。
-m = np.linspace(0.1,3,100) #####奥行きのパラメータ
-alpha_list = np.linspace(1,50,100) #####アニメーションで変化させる変数
+m = np.linspace(0.0001,3,100) #####奥行きのパラメータ
+gamma_list = np.linspace(10**(-24),3,100) #####アニメーションで変化させる変数
 
 fig = plt.figure(figsize=(10,10)) #figureインスタンスの作成
 ax = fig.add_subplot(projection='3d') #3つ目の軸を追加
 K,M = np.meshgrid(k,m) #####格子点を作る。１つ目は波数kで固定。２つ目は奥行きのパラメータ。
 
-def draw_frame(alpha): #####引数はアニメーションで変化させる変数
+def draw_frame(gamma): #####引数はアニメーションで変化させる変数
 
     ax.cla()
 
@@ -36,16 +36,16 @@ def draw_frame(alpha): #####引数はアニメーションで変化させる変�
     E2 = (A+D)/2-np.sqrt(((A-D)/2)**2+np.abs(B)**2)
 
     
-    ax.plot_surface(K,M,E1, cmap='jet',label="alpha="+str(alpha)) #####
-    ax.text2D(0.05, 0.95, f"α={alpha}", transform=ax.transAxes) #####
-    ax.plot_surface(K,M,E2, cmap='jet') #####
+    ax.plot_surface(K,M,E1, cmap='jet',label="gamma="+str(gamma)) #####２つ目は奥行きのパラメータ,labelはアニメーションで変えるパラメータ
+    ax.text2D(0.05, 0.95, f"gamma={gamma}", transform=ax.transAxes) #####
+    ax.plot_surface(K,M,E2, cmap='jet') #####２つ目は奥行きのパラメータ
 #plt.plot(k,E1,label = "m="+str(m))
 #plt.plot(k,E2,label = "m="+str(m))
 
 #plt.legend()
 #ax.set_title("ε=1, α=1, γ1=10^-1")
 #plt.grid()
-ani = FuncAnimation(fig, draw_frame, frames=alpha_list, interval=100) #####3つめにアニメーションで変化させる変数のリストを設定
-ani.save("4.mp4", writer="ffmpeg")
+ani = FuncAnimation(fig, draw_frame, frames=gamma_list, interval=100) #####3つめにアニメーションで変化させる変数のリストを設定
+#ani.save("7.mp4", writer="ffmpeg")
 #ax.legend()
 plt.show()
