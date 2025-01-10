@@ -83,3 +83,32 @@ let
 
     return
 end
+
+#生成消滅演算子C,Cdagのフーリエ変換
+#量子数nのドメイン生成
+n_domain = []
+for n=-L/2+1:L/2
+    push!(n_domain,n)
+
+#波数kのドメイン生成
+k_domain = []
+for n in n_domain
+    k = (2*π)/L*(n-1/2)
+    push!(k_domain,k)
+        
+#C_kを格納する配列
+c_k_list = []
+
+#各波数でフーリエ変換を実行
+for k in k_domain
+    c_k = OpSum()
+    for j=1:L
+        c_k += 1/(√L)*exp(-im*k*j), "C", j
+    push!(c_k_list, c_k)
+#c_nの再定義(独自演算子の定義でやるほうがいい)
+c_n_list = []
+for j=1:L
+    c_n = OpSum()
+    for (i,k) in enumerate(k_domain)
+        c_n += 1/(√L)*exp(-im*k*j)*c_k_list[i]
+#c_n_listには波数表示（つまりフーリエ変換後）のc_nが格納されている
